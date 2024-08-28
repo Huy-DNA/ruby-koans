@@ -15,6 +15,8 @@
 #
 def triangle(a, b, c)
   case
+  when a + b <= c || a + c <= b || b + c <= a
+    raise TriangleError
   when a == b && b == c
     :equilateral
   when a != b && b != c && a != c
